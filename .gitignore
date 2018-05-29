@@ -1,0 +1,7 @@
+# .gitignore
+
+# config
+## 学習用となのでおいちゃんのレポジトリでは今回は拒否しない
+#config.php
+
+
