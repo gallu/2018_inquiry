@@ -41,6 +41,19 @@ if ('' === $input_data['body']) {
     // エラー
     $error_flg['body_empty'] = 1;
 }
+
+// CSRFチェック
+// tokenの取得
+$token = (string)@$_POST['csrf'];
+if ('' === $token) {
+    $error_flg['csrf_error'] = 1;
+}
+// tokenの比較
+if ($_SESSION['csrf'] !== $token) {
+    $error_flg['csrf_error'] = 1;
+}
+unset($_SESSION['csrf']); // 一回使い切り
+
 //
 if ([] !== $error_flg) {
     // form.phpにデータを渡す
