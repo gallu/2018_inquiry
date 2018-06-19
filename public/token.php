@@ -1,14 +1,14 @@
 <?php  // token.php
 
-// XXX ‚±‚ê‚Í‘Ê–ÚIII
+// XXX ã“ã‚Œã¯é§„ç›®ï¼ï¼ï¼
 $token = uniqid();
 var_dump($token);
 
-// XXX ‚±‚ê‚àƒ_ƒ
+// XXX ã“ã‚Œã‚‚ãƒ€ãƒ¡
 $token = sha1(microtime());
 var_dump($token);
 
-// ‚±‚Ì•Ó‚È‚ç‚Ü‚ŸˆÀ‘S
+// ã“ã®è¾ºãªã‚‰ã¾ãå®‰å…¨
 //$token_base = random_bytes(512);
 //$token = hash('sha512', $token_base);
 $token = hash('sha512', random_bytes(512));

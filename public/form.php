@@ -36,6 +36,7 @@ $smarty_obj->assign('error', $error);
 $smarty_obj->assign('csrf_token', $csrf_token);
 
 // 出力
-error_reporting(E_ALL & ~E_NOTICE);
-$smarty_obj->display('form.tpl');
+$tmp_filename = 'form.tpl';
+require_once('./fin.php');
+
 

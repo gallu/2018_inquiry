@@ -1,7 +1,5 @@
 <?php // input.php
-ob_start();
-session_start();
-require_once( __DIR__ . '/../config.php');
+require_once( __DIR__ . '/init.php');
 
 // 入力値の取得
 /*
@@ -67,26 +65,7 @@ if ([] !== $error_flg) {
 
 // DBへの接続
 // XXX 「横幅を画面に収める」為だけのsprintf：文字列連結でOK
-$dsn  = sprintf("mysql:dbname=%s;host=%s;charset=%s"
-            , $config['db']['dbname']
-            , $config['db']['host']
-            , $config['db']['charset'] );
-$user = $config['db']['user'];
-$pass = $config['db']['pass'];
-// MySQL固有の設定
-$opt = [
-    // 静的プレースホルダを指定
-    PDO::ATTR_EMULATE_PREPARES => false,
-    // 複文禁止
-    PDO::MYSQL_ATTR_MULTI_STATEMENTS => false,
-];
-try {
-    $dbh = new PDO($dsn, $user, $pass, $opt);
-} catch (PDOException $e) {
-    echo 'DB Connect error: ', $e->getMessage();
-    exit;
-}
-//var_dump($dbh);
+$dbh = db_connect($config);
 
 /* DBへのINSERT */
 // 準備された文(プリペアドステートメント)の作成

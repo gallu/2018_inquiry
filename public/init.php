@@ -3,17 +3,20 @@
 ob_start();
 session_start();
 
-// config‚Ì“Ç‚Ýž‚Ý
+// configã®èª­ã¿è¾¼ã¿
 require_once( __DIR__ . '/../config.php');
+//
+require_once( __DIR__ . '/db_connect.php');
 
-// Smarty‚ÌÝ’è
+
+// Smartyã®è¨­å®š
 require_once('/vendor/smarty/libs/Smarty.class.php');
 //
 $smarty_obj  =  new Smarty();
 $smarty_obj->setTemplateDir(__DIR__.'/../smarty/templates/');
 $smarty_obj->setCompileDir(__DIR__.'/../smarty/templates_c/');
 
-// ƒGƒXƒP[ƒv‚ðŽ©“®‚Åon‚É‚·‚é
+// ã‚¨ã‚¹ã‚±ãƒ¼ãƒ—ã‚’è‡ªå‹•ã§onã«ã™ã‚‹
 $smarty_obj->escape_html = true;
 //var_dump($smarty_obj);
 
