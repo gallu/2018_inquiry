@@ -47,9 +47,10 @@ if (false === password_verify($pw, $data['pass'])) {
     exit;
 }
 
-
 /* ログイン成功 */
 // 「ログインに成功した」データ(authorization)を保存しておく
+session_regenerate_id(true); // セキュリティ対策
+$_SESSION['admin_auth']['id'] = $id;
 
 
 // TopPageに遷移

@@ -64,7 +64,6 @@ if ([] !== $error_flg) {
 }
 
 // DBへの接続
-// XXX 「横幅を画面に収める」為だけのsprintf：文字列連結でOK
 $dbh = db_connect($config);
 
 /* DBへのINSERT */
