@@ -15,8 +15,14 @@ $r = $pre->execute();
 
 //データを取得
 $data = $pre->fetchAll();
-var_dump($data);
+$smarty_obj->assign('data', $data);
 
 // 出力
 $tmp_filename = 'admin_list.tpl';
 require_once('./fin.php');
+
+
+
+
+
+
