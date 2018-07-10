@@ -29,6 +29,12 @@ if (false === $data) {
 // 指定されたIDの問い合わせ内容を出力
 $smarty_obj->assign('detail', $data);
 
+// CSRFの埋め込み
+// TODO: tokenの寿命、タブで開いたらNG
+$csrf_token = get_csrf_token();
+$_SESSION['admin_csrf'] = $csrf_token;
+$smarty_obj->assign('csrf_token', $csrf_token);
+
 // 出力
 $tmp_filename = 'admin_detail.tpl';
 require_once('./fin.php');

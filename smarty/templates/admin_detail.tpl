@@ -38,6 +38,8 @@
 
     <h2>問い合わせ返信登録</h2>
     <form action="./admin_update.php" method="post">
+        <input type="hidden" name="csrf" value="{$csrf_token}">
+        <input type="hidden" name="id" value="{$detail.id}">
         返信内容<br><textarea name="response_body"></textarea><br>
         <button>返信内容登録</button>
     </form>

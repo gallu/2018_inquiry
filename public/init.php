@@ -21,4 +21,9 @@ $smarty_obj->escape_html = true;
 //var_dump($smarty_obj);
 
 
+// CSRFトークン作成
+function get_csrf_token() {
+    //return hash('sha512', random_bytes(512));
+    return bin2hex(random_bytes(32));
+}
 

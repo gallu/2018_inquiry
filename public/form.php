@@ -20,10 +20,6 @@ if (isset($_SESSION['error'])) {
 function h($s) {
     return htmlspecialchars($s, ENT_QUOTES);
 }
-// CSRFトークン作成
-function get_csrf_token() {
-    return hash('sha512', random_bytes(512));
-}
 
 // CSRFの埋め込み
 // TODO: tokenの寿命、タブで開いたらNG
