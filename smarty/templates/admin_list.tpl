@@ -13,10 +13,10 @@
 <h2>検索</h2>
 <form action="admin_list.php" method="get">
 <input type="hidden" name="sort" value="{$sort}">
-<label><input name="find_no_response" type="checkbox">「返信していない」もの</label><br>
+<label><input name="find_no_response" type="checkbox" {if $find_no_response == true}checked{/if}>「返信していない」もの</label><br>
 名前：<input name="find_name" value="{$find_name}" ><br>
-連絡先：<input name="find_address" ><br>
-作成日：<input name="find_created_from" >～<input name="find_created_to" ><br>
+連絡先：<input name="find_address" value="{$find_address}"><br>
+作成日：<input type="date" name="find_created_from" value="{$find_created_from}">～<input type="date" name="find_created_to" value="{$find_created_to}"><br>
 <br>
 <button>検索する</button>
 </form>
